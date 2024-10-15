@@ -1,14 +1,34 @@
 const mongoose = require('mongoose');
 
 const locationSchema = new mongoose.Schema({
-    lat: {
+    name: {
+        type: String,
+        required: true
+    },
+    avatar: {
+        type: String,
+        required: true
+    },
+    price: {
         type: Number,
         required: true
     },
-    long: {
-        type: Number,
-        required: true,
+    date: {
+        type: Date,
+        default: Date.now
     },
+    duration: {
+        type: Number,
+        required: true
+    },
+    solike: {
+        type: Number,
+        required: true
+    },
+    id: {
+        type: String,
+        required: true
+    }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Location', locationSchema);
+module.exports = mongoose.model('Trip', locationSchema);

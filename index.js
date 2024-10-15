@@ -5,8 +5,8 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-// Sử dụng biến môi trường để quản lý kết nối MongoD
-const MONGODB_URL='mongodb+srv://vanthien562004:vanthien562004@cluster0.pizki.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+
+const MONGODB_URL='mongodb+srv://cuong:cuong@cluster0.ya5c7.mongodb.net/cuong?retryWrites=true&w=majority&appName=Cluster0'
 
 
 // Sử dụng async/await để kết nối MongoDB
@@ -31,7 +31,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const locationRoute = require('./api/routes/location.route')
+const TripRoute = require('./api/routes/location.route')
 app.use("/v1/api/location",locationRoute)
+app.use("/v1/api/trip",TripRoute)
 app.get('/',(req,res) => res.send("cupng dang bu"))
 // Kiểm tra nếu process.env.PORT không tồn tại thì sử dụng port 3000 mặc định
 const PORT = process.env.PORT || 8000;
